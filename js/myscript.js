@@ -1,125 +1,115 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-    $(".header-icon").click(function(){
+    $(".header-icon").click(function () {
         $(".header").toggle();
     })
-    
 
-    
+
+
     var Shuffle = window.Shuffle;
     var element = document.querySelector('.my-shuffle-container');
     var sizer = element.querySelector('.my-sizer-element');
 
     var shuffleInstance = new Shuffle(element, {
-    itemSelector: '.picture-item',
-    sizer: sizer // could also be a selector: '.my-sizer-element'
+        itemSelector: '.picture-item',
+        sizer: sizer // could also be a selector: '.my-sizer-element'
     });
 
-    $("#all").on("click", function(){
-    shuffleInstance.filter();
+    $("#all").on("click", function () {
+        shuffleInstance.filter();
     });
-    $("#btn-app").on("click", function(){
-    shuffleInstance.filter('app');
+    $("#btn-app").on("click", function () {
+        shuffleInstance.filter('app');
     });
-    $("#btn-card").on("click", function(){
-    shuffleInstance.filter('cardd');
+    $("#btn-card").on("click", function () {
+        shuffleInstance.filter('cardd');
     });
-    $("#btn-web").on("click", function(){
-    shuffleInstance.filter('web');
+    $("#btn-web").on("click", function () {
+        shuffleInstance.filter('web');
     });
 
 
-    $(".p-anchor").click(function(e)
-    {
+    $(".p-anchor").click(function (e) {
         e.preventDefault();
     })
 
-    $('.section-5 .main-section-buttons ul li').on('click',function(){
+    $('.section-5 .main-section-buttons ul li').on('click', function () {
         $(this).addClass('current-active').siblings().removeClass('current-active');
     })
 
     // owl carousel js
 
     $('.owl-carousel').owlCarousel({
-        loop:true,
-        margin:10,
+        loop: true,
+        margin: 10,
         // nav:true,
         // items:3,
-        autoplay:true,
-        responsive:{
-            0:{
-                items:1
+        autoplay: true,
+        responsive: {
+            0: {
+                items: 1
             },
-            600:{
-                items:2
+            600: {
+                items: 2
             },
-            1000:{
-                items:3
+            1000: {
+                items: 3
             }
         }
     })
 
 
-     // form validation 
+    // form validation 
 
-     $('#submit-key').click(function(e){
+    $('#submit-key').click(function (e) {
 
         e.preventDefault();
 
         // getting the user data
 
-        var name=$('#inputname').val();
+        var name = $('#inputname').val();
 
-        var email=$('#inputEmail4').val();
+        var email = $('#inputEmail4').val();
 
-        var subject=$('#inputsubject').val();
+        var subject = $('#inputsubject').val();
 
-        var message=$('#exampleTextarea1').val();
+        var message = $('#exampleTextarea1').val();
 
-        if(name.length<4)
-        {
+        if (name.length < 4) {
             $('.name-valid').removeClass('d-none');
         }
 
-        if(name.length>4)
-        {
+        if (name.length > 4) {
             $('.name-valid').addClass('d-none');
         }
 
-        if(email.length==0)
-        {
+        if (email.length == 0) {
             $('.mail-valid').removeClass('d-none');
         }
 
-        if(email.length!=0)
-        {
+        if (email.length != 0) {
             $('.mail-valid').addClass('d-none');
         }
 
-        if(subject.length<8)
-        {
+        if (subject.length < 8) {
             $('.subject-valid').removeClass('d-none');
         }
-        
-        if(subject.length>=8)
-        {
+
+        if (subject.length >= 8) {
             $('.subject-valid').addClass('d-none');
         }
 
-        if(message.length==0)
-        {
+        if (message.length == 0) {
             $('.message-valid').removeClass('d-none');
         }
-        
-        if(message.length!=0)
-        {
+
+        if (message.length != 0) {
             $('.message-valid').addClass('d-none');
         }
 
         // if all the data are entered correct so slear the form
 
-        if(name.length>4 && email.length!=0 && subject.length>8 && message.length!=0)
-        {
+        if (name.length > 4 && email.length != 0 && subject.length > 8 && message.length != 0) {
             $('#frm').trigger('reset');
         }
     })
@@ -127,34 +117,32 @@ $(document).ready(function(){
 
     // scroll buttton 
 
-    $(window).scroll(function(){
-        var scrool_value=$(window).scrollTop();
+    $(window).scroll(function () {
+        var scrool_value = $(window).scrollTop();
         // console.log(scrool_value);
-        if(scrool_value>=40)
-        {
+        if (scrool_value >= 40) {
             $('.scrool-bar-btn').removeClass('d-none')
         }
-        else
-        {
+        else {
             $('.scrool-bar-btn').addClass('d-none')
         }
     })
 
 
-    $('.scrool-bar-btn').click(function(){
+    $('.scrool-bar-btn').click(function () {
         $(window).scrollTop(0);
     })
 
 
     // typed js
 
-    var t=new Typed("#one",{
-        strings:["Designer","Developer","Freelancer","Photographer"],
-        loop:true,
-        typeSpeed:100,
-        backSpeed:100,
-        cursorChar:"|",
-        startDelay:0,
+    var t = new Typed("#one", {
+        strings: ["FullStack Engineer", "DevOps Tranee", "Microsoft SPFx Developer", "Passionate Teacher"],
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 100,
+        cursorChar: "|",
+        startDelay: 0,
     })
-    
+
 })
