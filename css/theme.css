@@ -728,6 +728,25 @@ padding: 10px;
     font-size: 24px;
 }
 
+.cv-wrapper{
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 999999;
+    border: 1px solid #ddd;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    
+}
+.cv-wrapper a{
+    padding: 6px 12px;
+    display: inline-block;
+    color: #000;
+    text-align: center;
+}
+
 
 /* Extra small devices (portrait phones, less than 576px)  */
 /* No media query for `xs` since this is the default in Bootstrap  */
